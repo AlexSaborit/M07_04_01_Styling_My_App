@@ -2,6 +2,8 @@ package asb.m07.m07_04_01.stylingmyapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?)
@@ -10,11 +12,16 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         //rebo int de l'intent que obre l'activity
-        val videojoc = intent.getSerializableExtra("videojoc") as Figura?
+        val figura = intent.getSerializableExtra("figura") as Figura?
         var manager = supportFragmentManager
         var fragment = manager.findFragmentById(R.id.FrgDetails) as DetailsFragment
-        if (videojoc != null) {
-            fragment.setVideojoc(videojoc)
+        if (figura != null) {
+            fragment.setFigura(figura)
+        }
+
+        val btnComprar = findViewById<Button>(R.id.btnComprar)
+        btnComprar.setOnClickListener {
+            Toast.makeText(this, "Ja ets a la pantalla de shopping!!", Toast.LENGTH_SHORT).show()
         }
     }
 }

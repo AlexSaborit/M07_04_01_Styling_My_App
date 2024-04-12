@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Definició d'estil per al text principal -->
     <style name="TextPrincipal">
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">#000000</item>
         <item name="android:padding">5dp</item>
     </style>
-
-    <!-- Definició d'estil per als botons -->
     <style name="Botons">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:background">#007bff</item>
     </style>
-
-    <!-- Definició d'estil per als titols -->
     <style name="Titols">
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:textColor">#FF5733</item>
         <item name="android:textStyle">bold</item>
         <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Detalls">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textAlignment">center</item>
     </style>
 </resources>

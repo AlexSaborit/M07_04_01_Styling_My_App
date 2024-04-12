@@ -9,33 +9,36 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class FiguraAdapter(private val context: FragmentActivity, private val figures: MutableList<Figura>):
-    RecyclerView.Adapter<FiguraAdapter.VideojocViewHolder>(),
+    RecyclerView.Adapter<FiguraAdapter.FiguraViewHolder>(),
     View.OnClickListener
 {
-    private val layout = R.layout.listview_videojocs_items
+    private val layout = R.layout.listview_figures_items
     private var clickListener: View.OnClickListener? = null
-    class VideojocViewHolder(val view: View): RecyclerView.ViewHolder(view)
+    class FiguraViewHolder(val view: View): RecyclerView.ViewHolder(view)
     {
-        val videojocCaratula = view.findViewById(R.id.ivFigura) as ImageView
-        val videojocTitol = view.findViewById(R.id.tvTitol) as TextView
+        val ivFigura = view.findViewById(R.id.ivFigura) as ImageView
+        val tvTitol = view.findViewById(R.id.tvTitol) as TextView
+        val tvUnivers = view.findViewById(R.id.tvUnivers) as TextView
+        val tvPreu = view.findViewById(R.id.tvPreu) as TextView
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideojocViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FiguraViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)
 
         view.setOnClickListener(this)
 
-        return VideojocViewHolder(view)
+        return FiguraViewHolder(view)
     }
-    override fun onBindViewHolder(holder: VideojocViewHolder, position: Int) {
-        val videojoc = figures[position]
-        bindVideojoc(holder, videojoc)
+    override fun onBindViewHolder(holder: FiguraViewHolder, position: Int) {
+        val figura = figures[position]
+        bindFigura(holder, figura)
     }
     override fun getItemCount() = figures.size
 
-    fun bindVideojoc(holder: VideojocViewHolder, videojoc: Figura) {
-        holder.videojocCaratula?.setImageResource(videojoc.imatge)
-        holder.videojocTitol?.text = videojoc.nom
-        //holder.videojocJugadors?.text = "Jugadors: " + videojoc.jugadors
+    fun bindFigura(holder: FiguraViewHolder, figura: Figura) {
+        holder.ivFigura?.setImageResource(figura.imatge)
+        holder.tvTitol?.text = figura.nom
+        holder.tvUnivers?.text = figura.univers
+        holder.tvPreu?.text = figura.preu.toString() + "€"
     }
 
 

@@ -30,6 +30,13 @@
             android:layout_height="wrap_content"
             />
         <TextView
+            android:id="@+id/tvUnivers"
+            style="@style/TextPrincipal"
+            android:text="UNIVERS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
             android:id="@+id/tvPreu"
             style="@style/TextPrincipal"
             android:text="PREU"

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,19 +20,19 @@ class ListFragment: Fragment() {
         val view = inflater.inflate(R.layout.fragment_list, container, false)
 
         //inici pegote
-        val videojocs = getFigures()
+        val figures = getFigures()
 
-        val lstVideojocs = view.findViewById(R.id.RclrVwListVj) as RecyclerView
+        val lstFigures = view.findViewById(R.id.RclrVwListVj) as RecyclerView
 
-        val adapter = FiguraAdapter(requireActivity(), videojocs)
-        lstVideojocs.hasFixedSize()
-        lstVideojocs.layoutManager = LinearLayoutManager(requireContext())
-        lstVideojocs.adapter = adapter
+        val adapter = FiguraAdapter(requireActivity(), figures)
+        lstFigures.hasFixedSize()
+        lstFigures.layoutManager = LinearLayoutManager(requireContext())
+        lstFigures.adapter = adapter
 
         adapter.setOnClickListener()
         {
-            val videojoc = videojocs[lstVideojocs.getChildAdapterPosition(it)]
-            listener.onClick(videojoc)
+            val figura = figures[lstFigures.getChildAdapterPosition(it)]
+            listener.onClick(figura)
         }
         //fi pegote
         return view
@@ -45,16 +46,16 @@ class ListFragment: Fragment() {
 
     fun getFigures(): MutableList<Figura> {
         return mutableListOf(
-            Figura("Red Dead Redemption II", R.drawable.noimageavailable, 150000000.0,"Japó", 32, true),
-            Figura("Grand Theft Auto V", R.drawable.noimageavailable, 1000000000.0,"Japó", 32, true),
-            Figura("Kingdom Hearts", R.drawable.noimageavailable, 52424774.0,"Japó", 32, true),
-            Figura("Super Mario Odissey", R.drawable.noimageavailable, 245789544.0,"Japó", 32, true),
-            Figura("Pokémon edición Amarilla", R.drawable.noimageavailable, 999999999.0,"Japó", 32, true),
-            Figura("Spyro 3: Year of the Dragon", R.drawable.noimageavailable, 65484825.0,"Japó", 32, true),
-            Figura("Crash Bandicoot 2", R.drawable.noimageavailable, 547471415.0,"Japó", 32, true),
-            Figura("Metroid Dread", R.drawable.noimageavailable, 3389985.0,"Japó", 32, true),
-            Figura("Hogwarts Legacy", R.drawable.noimageavailable, 514789.0,"Japó", 32, true),
-            Figura("International Rally Championship", R.drawable.noimageavailable, 130000.0,"Japó", 32, true),
+            Figura("Red Ranger amb escut", R.drawable.redranger, 980.24,"Mighty Morphin Power Rangers", 32, true, false),
+            Figura("Sora", R.drawable.sora, 30.0,"Kingdom Hearts", 10, true, true),
+            Figura("Eren Jaeger", R.drawable.eren, 100.0,"Attack on Titans", 32, false, false),
+            Figura("Super Mario", R.drawable.mario, 45.5,"Super Mario", 32, true, true),
+            Figura("Pikachu", R.drawable.pikachu, 19.90,"Pokémon", 56, true, true),
+            Figura("Asuka", R.drawable.asuka, 75.5,"Evangelion", 32, false, false),
+            Figura("Arale", R.drawable.arale, 37.89,"Dr. Slump", 32, false, false),
+            Figura("Sakura", R.drawable.sakura, 150.0,"Cardcaptor Sakura", 24, false, true),
+            Figura("Robot soldat", R.drawable.laputa_robot_toy, 25.0,"El castell de Laputa", 1, true, false),
+            Figura("Tsunade", R.drawable.tsunade, 9.99,"Naruto", 32, false, true),
         )
     }
 }
