@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity(), MyOnClickListener {
         listFragment.setListener(this)
     }
 
-    override fun onClick(videojoc: Videojoc) {
+    override fun onClick(videojoc: Figura) {
         val DetailsFragment = supportFragmentManager.findFragmentById(R.id.FrgDetails) as DetailsFragment?
         if(DetailsFragment == null)//mòbil en comptes de tablet
         {

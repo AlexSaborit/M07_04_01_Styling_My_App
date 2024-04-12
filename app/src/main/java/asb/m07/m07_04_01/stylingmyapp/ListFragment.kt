@@ -19,11 +19,11 @@ class ListFragment: Fragment() {
         val view = inflater.inflate(R.layout.fragment_list, container, false)
 
         //inici pegote
-        val videojocs = getVideojocs()
+        val videojocs = getFigures()
 
         val lstVideojocs = view.findViewById(R.id.RclrVwListVj) as RecyclerView
 
-        val adapter = VideojocAdapter(requireActivity(), videojocs)
+        val adapter = FiguraAdapter(requireActivity(), videojocs)
         lstVideojocs.hasFixedSize()
         lstVideojocs.layoutManager = LinearLayoutManager(requireContext())
         lstVideojocs.adapter = adapter
@@ -43,18 +43,18 @@ class ListFragment: Fragment() {
         }
     }
 
-    fun getVideojocs(): MutableList<Videojoc> {
+    fun getFigures(): MutableList<Figura> {
         return mutableListOf(
-            Videojoc("Red Dead Redemption II", R.drawable.noimageavailable, 150000000),
-            Videojoc("Grand Theft Auto V", R.drawable.noimageavailable, 1000000000),
-            Videojoc("Kingdom Hearts", R.drawable.noimageavailable, 52424774),
-            Videojoc("Super Mario Odissey", R.drawable.noimageavailable, 245789544),
-            Videojoc("Pokémon edición Amarilla", R.drawable.noimageavailable, 999999999),
-            Videojoc("Spyro 3: Year of the Dragon", R.drawable.noimageavailable, 65484825),
-            Videojoc("Crash Bandicoot 2", R.drawable.noimageavailable, 547471415),
-            Videojoc("Metroid Dread", R.drawable.noimageavailable, 3389985),
-            Videojoc("Hogwarts Legacy", R.drawable.noimageavailable, 514789),
-            Videojoc("International Rally Championship", R.drawable.noimageavailable, 130000)
+            Figura("Red Dead Redemption II", R.drawable.noimageavailable, 150000000.0,"Japó", 32, true),
+            Figura("Grand Theft Auto V", R.drawable.noimageavailable, 1000000000.0,"Japó", 32, true),
+            Figura("Kingdom Hearts", R.drawable.noimageavailable, 52424774.0,"Japó", 32, true),
+            Figura("Super Mario Odissey", R.drawable.noimageavailable, 245789544.0,"Japó", 32, true),
+            Figura("Pokémon edición Amarilla", R.drawable.noimageavailable, 999999999.0,"Japó", 32, true),
+            Figura("Spyro 3: Year of the Dragon", R.drawable.noimageavailable, 65484825.0,"Japó", 32, true),
+            Figura("Crash Bandicoot 2", R.drawable.noimageavailable, 547471415.0,"Japó", 32, true),
+            Figura("Metroid Dread", R.drawable.noimageavailable, 3389985.0,"Japó", 32, true),
+            Figura("Hogwarts Legacy", R.drawable.noimageavailable, 514789.0,"Japó", 32, true),
+            Figura("International Rally Championship", R.drawable.noimageavailable, 130000.0,"Japó", 32, true),
         )
     }
 }

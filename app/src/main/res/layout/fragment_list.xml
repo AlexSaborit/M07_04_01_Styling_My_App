@@ -8,12 +8,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp">
+        android:paddingTop="20dp"
+        android:paddingHorizontal="20dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Titols"
+            android:text="BOTIGA FRIKI"
+            />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RclrVwListVj"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="2"/>
+            android:layout_weight="2"
+            android:layout_marginTop="20dp"
+            />
+
+
+
     </LinearLayout>
 
 </FrameLayout>

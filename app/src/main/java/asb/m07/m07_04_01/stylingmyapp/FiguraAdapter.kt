@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 
-class VideojocAdapter(private val context: FragmentActivity, private val videojocs: MutableList<Videojoc>):
-    RecyclerView.Adapter<VideojocAdapter.VideojocViewHolder>(),
+class FiguraAdapter(private val context: FragmentActivity, private val figures: MutableList<Figura>):
+    RecyclerView.Adapter<FiguraAdapter.VideojocViewHolder>(),
     View.OnClickListener
 {
     private val layout = R.layout.listview_videojocs_items
@@ -27,14 +27,14 @@ class VideojocAdapter(private val context: FragmentActivity, private val videojo
         return VideojocViewHolder(view)
     }
     override fun onBindViewHolder(holder: VideojocViewHolder, position: Int) {
-        val videojoc = videojocs[position]
+        val videojoc = figures[position]
         bindVideojoc(holder, videojoc)
     }
-    override fun getItemCount() = videojocs.size
+    override fun getItemCount() = figures.size
 
-    fun bindVideojoc(holder: VideojocViewHolder, videojoc: Videojoc) {
+    fun bindVideojoc(holder: VideojocViewHolder, videojoc: Figura) {
         holder.videojocCaratula?.setImageResource(videojoc.imatge)
-        holder.videojocTitol?.text = videojoc.titol
+        holder.videojocTitol?.text = videojoc.nom
         //holder.videojocJugadors?.text = "Jugadors: " + videojoc.jugadors
     }
 

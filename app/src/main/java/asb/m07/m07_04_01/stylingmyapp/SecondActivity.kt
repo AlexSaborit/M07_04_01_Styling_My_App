@@ -10,7 +10,7 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         //rebo int de l'intent que obre l'activity
-        val videojoc = intent.getSerializableExtra("videojoc") as Videojoc?
+        val videojoc = intent.getSerializableExtra("videojoc") as Figura?
         var manager = supportFragmentManager
         var fragment = manager.findFragmentById(R.id.FrgDetails) as DetailsFragment
         if (videojoc != null) {

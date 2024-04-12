@@ -20,13 +20,13 @@ class DetailsFragment : Fragment() {
         var view = inflater.inflate(R.layout.fragment_details, container, false)
         return view
     }
-    fun setVideojoc(videojoc: Videojoc)
+    fun setVideojoc(videojoc: Figura)
     {
         var ImgVwCaratula = view?.findViewById<ImageView>(R.id.ImgVwCaratula)
         ImgVwCaratula?.setImageResource(videojoc.imatge)
         var TxtVwTitol = view?.findViewById<TextView>(R.id.TxtVwTitol)
-        TxtVwTitol?.text = videojoc.titol
+        TxtVwTitol?.text = videojoc.nom
         var TxtVwJugs = view?.findViewById<TextView>(R.id.TxtVwJugs)
-        TxtVwJugs?.text = "Jugadors: " + videojoc.jugadors.toString()
+        TxtVwJugs?.text = "Jugadors: " + videojoc.preu.toString()
     }
 }
